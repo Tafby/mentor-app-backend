@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   post 'find_user' => 'users#find'
 
   resources :users
-  # post '/login', to: 'auth#create'
-  # get '/profile', to: 'users#profile'
 
+  resources :mentor_profiles
+
+  resources :conversations, only: [:index, :show] do
+    resources :messages, only: [:index, :create]
+  end
+
+  resources :categories, only: [:index]
 end

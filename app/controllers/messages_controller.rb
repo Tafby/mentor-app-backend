@@ -1,21 +1,24 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user
+
   def index
-  @messages = Message.all
+    @messages = Message.where(conversation_id: params[:conversation_id])
+    render json: @messages
   end
-  
 
-  
   def create
-  @message = Message.create(message_params)
-  end
-  
-  
-  def show
-  
+    @message = Message.create(
+      message_params.merge(
+        user_id: current_user.id,
+        conversation_id: params[:conversation_id],
+      )
+    )
+    render json: @message
   end
 
-  private 
+  private
+
   def message_params 
-    params.require(:messages).permit(:body, :user_id, :conversation_id)
+    params.require(:message).permit(:body)
   end
 end

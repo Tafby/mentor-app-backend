@@ -23,10 +23,10 @@ MentorProfile.create(user_id: 2, category_id: 2, description: "Arts is my game, 
 MentorProfile.create(user_id: 3, category_id: 3, description: "I sale the heck out of cars, let me help you get yours!")
 MentorProfile.create(user_id: 4, category_id: 4, description: "I like to bank, let's count money together")
 
-Category.create(name: "Accounting & Tax Services",  mentor_profile_id: 1)
-Category.create(name: "Arts, Culture & Entertainment", mentor_profile_id: 2)
-Category.create(name: "Auto Sales & Service", mentor_profile_id: 3)
-Category.create(name: "Banking & Finance", mentor_profile_id: 4)
+Category.create(name: "Accounting & Tax Services")
+Category.create(name: "Arts, Culture & Entertainment")
+Category.create(name: "Auto Sales & Service")
+Category.create(name: "Banking & Finance")
 Category.create(name: "Business Services")
 Category.create(name: "Community Organizations")
 Category.create(name: "Dentists & Orthodontists")
@@ -49,17 +49,17 @@ Category.create(name: "Wedding, Events, & Meetings")
 
 Conversation.create()
 
-UserConversation.create(conversation_id: 1, user_id: 1)
-UserConversation.create(conversation_id: 1, user_id: 2)
+# UserConversation.create(conversation_id: 1, user_id: 1)
+# UserConversation.create(conversation_id: 1, user_id: 2)
 
-Message.create(user_id: 1, conversation_id: 1, :body "Hey")
-Message.create(user_id: 2, conversation_id: 1, :body "Hi")
-Message.create(user_id: 1, conversation_id: 1, :body "What's up?")
-Message.create(user_id: 2, conversation_id: 1, :body "nothing")
-Message.create(user_id: 1, conversation_id: 1, :body "okay")
+# Message.create(user_id: 1, conversation_id: 1, body: "Hey")
+# Message.create(user_id: 2, conversation_id: 1, body: "Hi")
+# Message.create(user_id: 1, conversation_id: 1, body: "What's up?")
+# Message.create(user_id: 2, conversation_id: 1, body: "nothing")
+# Message.create(user_id: 1, conversation_id: 1, body: "okay")
 
 
-MentorShip.create(mentor_id: 1, mentee_id: 2, category_id: 1, status: "Accepted")
+Mentorship.create(mentor_id: 1, mentee_id: 2, category_id: 1, status: "Accepted")
 
 
 

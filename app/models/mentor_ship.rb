@@ -1,2 +1,0 @@
-class MentorShip < ApplicationRecord
-end

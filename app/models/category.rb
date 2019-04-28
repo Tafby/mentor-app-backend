@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  belongs_to :mentor_profile
+  has_many :mentor_profiles
 end

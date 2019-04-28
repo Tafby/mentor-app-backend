@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MentorShipTest < ActiveSupport::TestCase
+class MentorshipTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

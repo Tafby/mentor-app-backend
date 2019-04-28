@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_26_171021) do
+ActiveRecord::Schema.define(version: 2019_04_26_221821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "mentor_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +30,16 @@ ActiveRecord::Schema.define(version: 2019_04_26_171021) do
     t.integer "user_id"
     t.integer "category_id"
     t.text "description"
+    t.boolean "active", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mentorships", force: :cascade do |t|
+    t.integer "mentor_id"
+    t.integer "mentee_id"
+    t.integer "category_id"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_171021) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_converstions", force: :cascade do |t|
+  create_table "user_conversations", force: :cascade do |t|
     t.integer "conversation_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
