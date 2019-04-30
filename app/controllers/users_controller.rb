@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  before_action :authenticate_user, only: [:find]
+  before_action :authenticate_user, only: [:find, :update]
 
   def index
     @users = User.all
@@ -14,6 +14,10 @@ class UsersController < ApplicationController
   def find
     render json: current_user
   end
+  def edit
+    @user =  User.find(params[:id])
+    render json: @user
+  end
 
   def create
     @user = User.new(user_params)
@@ -25,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @user.update_attributes(user_params)
       render json: @user, status: :ok
     else
       render json: @user.errors, status: :unprocessable_entity

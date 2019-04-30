@@ -2,8 +2,8 @@ class MentorProfilesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @mentorprofiles = MentorProfile.all
-    render json: @mentorprofiles
+    @mentorprofiles = MentorProfile.where(active: true)
+    render json: @mentorprofiles 
   end
   
   
