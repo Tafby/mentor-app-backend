@@ -6,11 +6,4 @@ class User < ApplicationRecord
   has_many :mentorships, foreign_key: 'mentor_id'
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
-
-  def to_token_payload
-    {
-      sub: id,
-      email: email
-    }
-  end
 end

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   post 'find_user' => 'users#find'
 
   resources :users
-  delete '/users/:id' => 'user#destroy'
 
   resources :mentor_profiles
   resources :mentorships

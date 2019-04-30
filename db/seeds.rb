@@ -13,11 +13,6 @@ Sandy = User.create(email:"sandy@gmail.com", first_name: "Sandy", last_name: "Co
 Maggie = User.create(email:"maggie@gmail.com", first_name: "Maggie", last_name: "Computer", password_digest: BCrypt::Password.create('iloveturtles'), location: "Seattle", interests: "Scuba Diving")
 Sandra = User.create(email:"sandra@gmail.com", first_name: "Sandra", last_name: "Charger", password_digest: BCrypt::Password.create('ineedtodrinkmorewater'),location: "Seattle", interests: "Retail")
 
-
-
-
-
-
 MentorProfile.create(user_id: 1, category_id: 1, description: "I have many years in tax services and I can work with you every week")
 MentorProfile.create(user_id: 2, category_id: 2, description: "Arts is my game, sandy is my name, let's make art!")
 MentorProfile.create(user_id: 3, category_id: 3, description: "I sale the heck out of cars, let me help you get yours!")

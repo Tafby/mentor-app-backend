@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def find
     render json: current_user
   end
+
   def edit
     @user =  User.find(params[:id])
     render json: @user
