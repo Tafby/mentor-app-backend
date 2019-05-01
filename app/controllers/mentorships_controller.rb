@@ -3,7 +3,7 @@ class MentorshipsController < ApplicationController
   before_action :set_mentorship, only: [:show, :update, :destroy]
 
   def index
-      @mentorships = Mentorship.where(mentor_id: current_user.id)
+      @mentorships = Mentorship.all
       render json: @mentorships
   end
   
