@@ -44,17 +44,17 @@ Category.create(name: "Wedding, Events, & Meetings")
 
 Conversation.create()
 
-# UserConversation.create(conversation_id: 1, user_id: 1)
-# UserConversation.create(conversation_id: 1, user_id: 2)
+UserConversation.create(conversation_id: 1, user_id: 1)
+UserConversation.create(conversation_id: 1, user_id: 2)
 
-# Message.create(user_id: 1, conversation_id: 1, body: "Hey")
-# Message.create(user_id: 2, conversation_id: 1, body: "Hi")
-# Message.create(user_id: 1, conversation_id: 1, body: "What's up?")
-# Message.create(user_id: 2, conversation_id: 1, body: "nothing")
-# Message.create(user_id: 1, conversation_id: 1, body: "okay")
+Message.create(user_id: 1, conversation_id: 1, body: "Hey")
+Message.create(user_id: 2, conversation_id: 1, body: "Hi")
+Message.create(user_id: 1, conversation_id: 1, body: "What's up?")
+Message.create(user_id: 2, conversation_id: 1, body: "nothing")
+Message.create(user_id: 1, conversation_id: 1, body: "okay")
 
 
-Mentorship.create(mentor_id: 1, mentee_id: 2, category_id: 1, status: "Accepted")
+
 
 
 

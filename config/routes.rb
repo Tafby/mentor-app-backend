@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   resources :mentor_profiles
   resources :mentorships
 
-  resources :conversations, only: [:index, :show] do
+  resources :conversations, only: [:index] do
     resources :messages, only: [:index, :create]
   end
+
+  mount ActionCable.server => '/cable'
 
   resources :categories, only: [:index]
 end

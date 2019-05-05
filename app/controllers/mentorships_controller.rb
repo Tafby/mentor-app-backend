@@ -19,6 +19,10 @@ class MentorshipsController < ApplicationController
 
   def update
     if @mentorship.update_attributes(mentorship_params)
+      if @mentorship.accepted?
+        create_new_mentorship_conversation(@mentorship)
+      end
+
       render json: @mentorship, status: :ok
     else
       render json: @mentorship.errors, status: :unprocessable_entity
@@ -31,7 +35,13 @@ class MentorshipsController < ApplicationController
   end
 
 
-  private 
+  private
+
+  def create_new_mentorship_conversation(mentorship)
+    Conversation.create(
+      users: [@mentorship.mentor, @mentorship.mentee],
+    )
+  end
 
   def set_mentorship
     @mentorship = Mentorship.find(params[:id])
