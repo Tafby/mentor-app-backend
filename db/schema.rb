@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_031136) do
     t.string "password_digest"
     t.string "location"
     t.text "interests"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

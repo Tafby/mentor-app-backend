@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      ChatChannel.broadcast_to @message.conversation, @message
+      ChatChannel.broadcast_to @message.conversation, MessageSerializer.new(@message)
       head :created
     end
   end

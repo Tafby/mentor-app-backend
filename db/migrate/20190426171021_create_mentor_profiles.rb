@@ -6,6 +6,7 @@ class CreateMentorProfiles < ActiveRecord::Migration[5.2]
       t.text :description
       t.boolean :active, default: false
 
+
       t.timestamps
     end
   end

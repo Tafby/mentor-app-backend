@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def update
+
     if @user.update_attributes(user_params)
       render json: @user, status: :ok
     else
@@ -56,7 +57,8 @@ class UsersController < ApplicationController
       :first_name,
       :last_name,
       :location,
-      :interests
+      :interests,
+      :picture
     )
   end
 end
