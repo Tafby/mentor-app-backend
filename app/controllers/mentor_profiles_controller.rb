@@ -24,6 +24,6 @@ class MentorProfilesController < ApplicationController
 
   private 
   def mentorprofileparams 
-    params.require(:mentor_profile).permit(:category_id, :description, :active)
+    params.require(:mentor_profile).permit(:category_id, :description, :active, :days_can_meet, :years_mentoring)
   end
 end

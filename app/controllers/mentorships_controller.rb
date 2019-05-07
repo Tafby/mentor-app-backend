@@ -10,6 +10,7 @@ class MentorshipsController < ApplicationController
   
   def create
     @mentorships = Mentorship.create(mentorship_params.merge(mentee_id: current_user.id, status: "Pending"))
+    byebug
     render json: @mentorships
   end
   

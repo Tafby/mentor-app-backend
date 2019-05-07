@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_05_03_031136) do
     t.integer "category_id"
     t.text "description"
     t.boolean "active", default: false
+    t.string "days_can_meet"
+    t.integer "years_mentoring"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +42,8 @@ ActiveRecord::Schema.define(version: 2019_05_03_031136) do
     t.integer "mentee_id"
     t.integer "category_id"
     t.string "status"
+    t.string "days_can_meet"
+    t.integer "years_mentoring"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

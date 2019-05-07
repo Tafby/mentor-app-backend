@@ -5,6 +5,7 @@ class CreateMentorships < ActiveRecord::Migration[5.2]
       t.integer :mentee_id
       t.integer :category_id
       t.string :status
+      
 
       t.timestamps
     end
