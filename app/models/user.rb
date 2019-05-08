@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :messages
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :password, presence: true
 
   def full_name
     [first_name, last_name].reject(&:blank?).join(' ')
